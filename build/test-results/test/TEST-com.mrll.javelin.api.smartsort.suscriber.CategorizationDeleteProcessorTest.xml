@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.mrll.javelin.api.smartsort.suscriber.CategorizationDeleteProcessorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-26T17:43:12" hostname="NA-300113" time="0.006">
-  <properties/>
-  <testcase name="Message successfully processed" classname="com.mrll.javelin.api.smartsort.suscriber.CategorizationDeleteProcessorTest" time="0.006"/>
-  <system-out><![CDATA[12:43:12.314 [Test worker] INFO com.mrll.javelin.api.smarttools.suscriber.CategorizeMetadataMessageProcessor - method=processMessage, message=received delete msg from queue, msg=MetadataUpdateEvent{projectId=project_id_1, userId=null, metadataIds=[m1], updateType=DONE, processingType=DOC_REPLACE}
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

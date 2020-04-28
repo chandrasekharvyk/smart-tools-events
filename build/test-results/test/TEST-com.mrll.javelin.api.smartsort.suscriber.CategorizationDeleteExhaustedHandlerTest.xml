@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.mrll.javelin.api.smartsort.suscriber.CategorizationDeleteExhaustedHandlerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-26T17:43:12" hostname="NA-300113" time="0.005">
-  <properties/>
-  <testcase name="empty project id parameter throws an exception" classname="com.mrll.javelin.api.smartsort.suscriber.CategorizationDeleteExhaustedHandlerTest" time="0.005"/>
-  <system-out><![CDATA[12:43:12.302 [Test worker] DEBUG com.mrll.javelin.api.smarttools.suscriber.CategorizationDeleteExhaustedHandler - message=maxRetriesExhausted delete Categorization projectId=null, metadataIds=null, originalStacktrace=null
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
