@@ -1,0 +1,26 @@
+
+Vsquid:S4719‘"9Replace charset name argument with StandardCharsets.UTF_8(ë±”€øÿÿÿÿ
+=squid:S11708"!Make this final field static too.(ùœˆ³øÿÿÿÿ
+Isquid:S1612²",Replace this lambda with a method reference.(¼—Ò×şÿÿÿÿ
+=squid:S11709"!Make this final field static too.(¥Ä°Šÿÿÿÿÿ
+Esquid:S2755‡"-Disable XML external entity (XXE) processing.(ğ¨ºî
+}squid:S1488¨"`Immediately return this expression instead of assigning it to the temporary variable "smartDoc".(§—©ùÿÿÿÿ
+Hsquid:S1612^",Replace this lambda with a method reference.(î™áğøÿÿÿÿ
+squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(àÔ¦ë8»úÃ¼›.
+wsquid:S4435„"ZSecure this "Transformer" by either disabling external DTDs or enabling secure processing.(´„äíúÿÿÿÿ
+Psquid:S10688"4Remove this unused "cutOffPrediction" private field.(ùœˆ³øÿÿÿÿ
+Ysquid:S3457™"AFormat specifiers should be used instead of string concatenation.(ªÕı´
+;squid:S1148"#Use a logger to log this exception.(Ç’Çê
+msquid:S001166"PRename this field "PAGES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±§ûÖşÿÿÿÿ
+Šsquid:S1319¤"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".( ”Û‚úÿÿÿÿ
+ksquid:S001167"SRename this field "XML_PAGE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á¢“Ú
+}squid:S001169"`Rename this field "MAX_FOLDER_SUGGESTION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥Ä°Šÿÿÿÿÿ
+–squid:S1319¤"yThe type of the "sandboxFolderInfo" object should be an interface such as "Map" rather than the implementation "HashMap".( ”Û‚úÿÿÿÿ
+|squid:S1149€"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(ì­ŠÜúÿÿÿÿ
+Jsquid:S1135"2Complete the task associated to this TODO comment.(ãğå»
+csquid:CommentedOutCodeLineÛ"<This block of commented-out lines of code should be removed.(ëù‹³
+msquid:S001165"URename this field "PAGE_WORDS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò…¿Õ
+Hsquid:S2629¦"$Invoke method(s) only conditionally.(ÎıÜ–ÿÿÿÿÿ8ˆ«Ä¼›.
+Isquid:UselessImportCheck"Remove this duplicated import.(ÿ¼ì8ˆ«Ä¼›.
+wsquid:S2139“"XEither log this exception and handle it, or rethrow it with some contextual information.(ï­£Ä8ˆ«Ä¼›.
+…squid:S3457¦"aNo need to call "toString()" method as formatting and string conversion is done by the Formatter.(ÎıÜ–ÿÿÿÿÿ8ˆ«Ä¼›.

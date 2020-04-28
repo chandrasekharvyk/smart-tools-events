@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a1c95d5b-fafd-483f-802f-67d6582608f0" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="smart-tools-events" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterExhaustedHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/SmartToolsEventsApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataValidatorTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterReceiverTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageProcessorTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteProcessorTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataMessageFactoryTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageValidatorTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataMessageProcessorTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteExhaustedHandlerTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>azureBlobDownloadDelegate</find>
+      <find>smart-sort-s</find>
+      <find>starter</find>
+      <find>main</find>
+      <find>springCloudVersion</find>
+      <find>springBootVersion</find>
+      <find>springb</find>
+      <find>git</find>
+      <find>ds1CommonAuditVersion</find>
+      <find>guest</find>
+      <find>eventProxyFilterListener</find>
+      <find>smart-too</find>
+      <find>smart-sor</find>
+      <find>acc</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/SmartToolsEventsApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteMessageFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smartsort/publisher/CategoryUpdatePublisher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smartsort/service/CategorizationService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smartsort/SmartToolsEventsApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/manifest-dev.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/manifest-prod.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/manifest-stage.yml" />
+        <option value="$PROJECT_DIR$/src/acceptance/groovy/smartsort/config/AcceptanceSpecConfiguration.groovy" />
+        <option value="$PROJECT_DIR$/src/acceptance/com/mrll/javelin/api/smartsort/smartSort/SmartSortProcessingAccSpec.groovy" />
+        <option value="$PROJECT_DIR$/src/acceptance/com/mrll/javelin/api/smarttools/SmartSortEndpointAccSpec.groovy" />
+        <option value="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smartsort/config/AcceptanceSpecConfiguration.groovy" />
+        <option value="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smartsort/config/TestUser.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/SmartToolsEventsApplication.java" />
+        <option value="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/AcceptanceSpecConfiguration.groovy" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/tests/SmartSortProcessingAccSpec.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageFactoryTest.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteMessageFactoryTest.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataMessageFactoryTest.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/MetadataCategorizationConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataMessageProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/service/CategorizationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/model/CategorizationEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/AuditingPublisher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataMessageFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataExhaustedHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterMessageProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterReceiver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/CategorizationDeleteQueueConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/EventProxyFilterConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizationDeleteProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizationDeleteMessageFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizationDeleteExhaustedHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/CategoryUpdatePublisher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/model/CategoryUpdateEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterMessageValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterMessageFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterExhaustedHandler.java" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataValidatorTest.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterReceiverTest.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageProcessorTest.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteProcessorTest.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageValidatorTest.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataMessageProcessorTest.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteExhaustedHandlerTest.groovy" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="44" />
+    <option name="y" value="63" />
+    <option name="width" value="1876" />
+    <option name="height" value="1024" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="smart-tools-events" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-tools-events" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-tools-events" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-tools-events" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-tools-events" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-tools-events" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-tools-events" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-tools-events" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-tools-events" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-tools-events" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="smarttools" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588087765577" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mrll.javelin.api.smarttools.tests" />
+      <recent name="com.mrll.javelin.api.smartsort.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/acceptance/resources" />
+      <recent name="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/acceptance" />
+      <recent name="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smartsort/config" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+    <option name="contentProportion" value="0.23089701" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.SmartToolsEventsApplication (1)">
+    <configuration name="All in smart-tools-events.test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="smart-tools-events.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in smart-tools-events.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="smart-tools-events.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmartToolsEventsApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="smart-tools-events.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mrll.javelin.api.smarttools.SmartToolsEventsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmartToolsEventsApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="smart-tools-events.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mrll.javelin.api.smarttools.SmartToolsEventsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in smart-tools-events.test (1)" />
+        <item itemvalue="JUnit.All in smart-tools-events.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1c95d5b-fafd-483f-802f-67d6582608f0" name="Default Changelist" comment="" />
+      <created>1587484614854</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587484614854</updated>
+      <workItem from="1587484616427" duration="3659000" />
+      <workItem from="1587496620074" duration="744000" />
+      <workItem from="1587497988116" duration="1062000" />
+      <workItem from="1587504858372" duration="3681000" />
+      <workItem from="1587567288517" duration="3211000" />
+      <workItem from="1587571921420" duration="3602000" />
+      <workItem from="1587590729604" duration="679000" />
+      <workItem from="1587592237291" duration="302000" />
+      <workItem from="1587648111477" duration="467000" />
+      <workItem from="1587910131764" duration="5882000" />
+      <workItem from="1588085660040" duration="1152000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="All_in_smart-tools-events_test - 2020.04.26 at 09h 17m 39s.xml">
+      <configuration name="All in smart-tools-events.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_smart-tools-events_test_(1) - 2020.04.26 at 09h 30m 03s.xml">
+      <configuration name="All in smart-tools-events.test (1)" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="24441000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="44" y="63" width="1876" height="1024" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Web" order="4" side_tool="true" />
+      <window_info id="Designer" order="5" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.25790623" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="0" visible="true" weight="0.37953794" />
+      <window_info anchor="bottom" id="Messages" order="1" />
+      <window_info anchor="bottom" id="Spring" order="2" weight="0.32893288" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.2618262" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
+      <window_info anchor="bottom" id="SonarLint" order="6" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="SonarQube" order="10" />
+      <window_info anchor="bottom" id="Build" order="11" weight="0.32893288" />
+      <window_info anchor="bottom" id="Message" order="12" />
+      <window_info anchor="bottom" id="Find" order="13" />
+      <window_info anchor="bottom" id="Run" order="14" weight="0.3080308" />
+      <window_info anchor="bottom" id="Debug" order="15" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="16" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="17" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="18" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.15267175" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Bean Validation" order="6" />
+      <window_info anchor="right" id="Maven" order="7" weight="0.32988003" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Web" order="4" side_tool="true" />
+      <window_info id="Designer" order="5" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.25517994" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="0" visible="true" weight="0.56545657" />
+      <window_info anchor="bottom" id="Messages" order="1" />
+      <window_info anchor="bottom" id="Spring" order="2" weight="0.32893288" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.2618262" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
+      <window_info anchor="bottom" id="SonarLint" order="6" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="SonarQube" order="10" />
+      <window_info anchor="bottom" id="Build" order="11" weight="0.32893288" />
+      <window_info anchor="bottom" id="Message" order="12" />
+      <window_info anchor="bottom" id="Find" order="13" />
+      <window_info anchor="bottom" id="Run" order="14" weight="0.3080308" />
+      <window_info anchor="bottom" id="Debug" order="15" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="16" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="17" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="18" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.15267175" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Bean Validation" order="6" />
+      <window_info anchor="right" id="Maven" order="7" weight="0.32988003" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smartsort/config/MQConfigs.groovy" />
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smartsort/smartSort/SmartSortEndpointAccSpec.groovy" />
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smartsort/config/TokenCache.groovy" />
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smartsort/config/TestProjectCreator.groovy" />
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smartsort/smartSort/SmartSortProcessingAccSpec.groovy" />
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smartsort/config/AcceptanceSpecConfiguration.groovy" />
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smartsort/config/TestUser.groovy" />
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/AcceptanceSpecConfiguration.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="e#48#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/MQConfigs.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/TestFixtureHelper.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/TestProjectCreator.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/TestUser.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/TokenCache.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acceptance/resources/test.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/tests/SmartSortProcessingAccSpec.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1273">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <folding>
+            <element signature="e#47#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/CategorizationPublisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageFactoryTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteMessageFactoryTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding>
+            <element signature="e#50#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/RabbitShovelConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-117">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../smart-tools-common/build/libs/smart-tools-common-0.0.1.jar!/com/mrll/javelin/api/smartsort/service/ProjectSettingsService.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="73" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataMessageProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../smart-tools-common/build/libs/smart-tools-common-0.0.1.jar!/com/mrll/javelin/api/smarttools/mongo/entity/SmartDoc.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="114" column="28" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2809#2810#0" expanded="true" />
+            <element signature="e#2847#2848#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/model/CategorizationEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/service/CategorizationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="109" column="45" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/AuditingPublisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-489">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataMessageFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataExhaustedHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/MetadataCategorizationConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="118" column="43" lean-forward="true" selection-start-line="118" selection-start-column="43" selection-end-line="118" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterMessageProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/CategorizationDeleteQueueConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizationDeleteProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizationDeleteMessageFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizationDeleteExhaustedHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/CategoryUpdatePublisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/model/CategoryUpdateEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#959#960#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterMessageValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterMessageFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/EventProxyFilterConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterExhaustedHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataValidatorTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterReceiverTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageProcessorTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteProcessorTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataMessageFactoryTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageValidatorTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataMessageProcessorTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteExhaustedHandlerTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/SmartToolsEventsApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>smart-tools-events</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Gradle: biz.paluch.redis:lettuce:4.5.0.Final</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

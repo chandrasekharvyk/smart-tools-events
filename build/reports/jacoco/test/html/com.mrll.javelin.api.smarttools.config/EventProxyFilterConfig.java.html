@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EventProxyFilterConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">smart-tools-events</a> &gt; <a href="index.source.html" class="el_package">com.mrll.javelin.api.smarttools.config</a> &gt; <span class="el_source">EventProxyFilterConfig.java</span></div><h1>EventProxyFilterConfig.java</h1><pre class="source lang-java linenums">package com.mrll.javelin.api.smarttools.config;
+
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.mrll.javelin.api.smarttools.exception.FatalSmartSortException;
+import com.mrll.javelin.api.smarttools.messagingproxyfilter.*;
+import com.mrll.javelin.api.smarttools.model.delegates.MetadataUpdateEvent;
+import com.mrll.javelin.api.smarttools.suscriber.CategorizeMetadataMessageProcessor;
+import com.mrll.javelin.common.event.config.BaseMqConfig;
+import com.mrll.javelin.common.event.config.ContainerBuilder;
+import com.mrll.javelin.common.event.mq.exhaustion.*;
+import com.mrll.javelin.common.security.jwt.JwtConverter;
+import com.mrll.javelin.common.security.service.JavelinJwtService;
+import com.mrll.javelin.common.security.util.SecurityHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.amqp.core.AmqpAdmin;
+import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.core.MessageListener;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.listener.MessageListenerContainer;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class EventProxyFilterConfig extends BaseMqConfig {
+
+    @Value(&quot;${local-message.metadataEventsExchange}&quot;)
+    private String metadataEventsExchange;
+    @Value(&quot;${local-message.smartSortQueue}&quot;)
+    private String smartSortQueue;
+    @Value(&quot;${local-message.smartSortKey}&quot;)
+    private String smartSortRoutingKey;
+
+    @Value(&quot;${local-message.updateRoutingKey}&quot;)
+    private String updateRoutingKey;
+
+    @Value(&quot;${local-message.metadataCategorizationExchange}&quot;)
+    private String metadataCategorizationExchange;
+    @Value(&quot;${local-message.metadataCategorizationQueue}&quot;)
+    private String metadataCategorizationQueue;
+    @Value(&quot;${local-message.metadataCategorizationRoutingKey}&quot;)
+    private String metadataCategorizationRoutingKey;
+
+    @Value(&quot;${message.smartSortConsumers: 1}&quot;)
+    private int concurrentConsumers;
+    @Value(&quot;${message.smartSortMaxConsumers: 3}&quot;)
+    private int maxConcurrentConsumers;
+
+    @Value(&quot;${messaging-config.maxRetries: 5}&quot;)
+    private int maxRetries;
+
+    private AmqpTemplate amqpTemplate;
+    private AmqpAdmin amqpAdmin;
+<span class="fc" id="L55">    private static final Logger LOG = LoggerFactory.getLogger(CategorizeMetadataMessageProcessor.class);</span>
+
+    public EventProxyFilterConfig(@Value(&quot;${message.deadLetterExchange}&quot;) String deadLetterExchange,
+                                  @Value(&quot;${vcap.application.name:#{null}}&quot;) String cloudFoundryAppName,
+                                  @Value(&quot;${spring.application.name:unknown}&quot;) String springAppName,
+                                  @Value(&quot;${message.defaultInitiateInterval: 1000}&quot;) long defaultInitiateInterval,
+                                  @Value(&quot;${message.defaultInitiateMaxAttempts: 3}&quot;) int defaultInitiateMaxAttempts,
+                                  @Value(&quot;${message.defaultInitiateMultiplier: 2.0}&quot;) double defaultInitiateMultiplier,
+                                  @Value(&quot;${message.defaultInitiateMaxInterval: 4000}&quot;) long defaultInitiateMaxInterval,
+                                  AmqpTemplate amqpTemplate,
+                                  AmqpAdmin amqpAdmin) {
+
+<span class="nc" id="L67">        super(deadLetterExchange, cloudFoundryAppName, springAppName, defaultInitiateInterval, defaultInitiateMaxAttempts, defaultInitiateMultiplier, defaultInitiateMaxInterval);</span>
+
+<span class="nc" id="L69">        this.amqpTemplate = amqpTemplate;</span>
+<span class="nc" id="L70">        this.amqpAdmin = amqpAdmin;</span>
+<span class="nc" id="L71">    }</span>
+
+
+    @Bean
+    public RetryingJavelinMessageListener&lt;MetadataUpdateEvent&gt; eventProxyFilterListener(JwtConverter jwtConverter,
+                                                                                        SecurityHelper securityHelper,
+                                                                                        JavelinJwtService jwtService,
+                                                                                        MessageProcessor proxyProcessor) {
+<span class="nc" id="L79">        return new RetryingJavelinMessageListener&lt;&gt;(</span>
+                jwtConverter,
+                securityHelper,
+                jwtService,
+<span class="nc" id="L83">                maxRetries,</span>
+<span class="nc" id="L84">                proxyFactory(),</span>
+                proxyProcessor,
+<span class="nc" id="L86">                proxyHandler(),</span>
+<span class="nc" id="L87">                proxyValidator());</span>
+    }
+
+    @Bean
+    public MessageListenerContainer messageProxyContainer(ConnectionFactory connectionFactory, MessageListener eventProxyFilterListener) {
+<span class="nc" id="L92">        configureAndDeclareDirectExchangeQueue(amqpAdmin, metadataEventsExchange, smartSortQueue, smartSortRoutingKey);</span>
+<span class="nc" id="L93">        configureAndDeclareDeadLetterQueue(amqpAdmin, smartSortQueue);</span>
+<span class="nc" id="L94">        LOG.info(&quot;Listening on Exchange:{} queue: {} routingKey: {}&quot;, metadataEventsExchange, smartSortQueue, smartSortRoutingKey);</span>
+<span class="nc" id="L95">        return new ContainerBuilder()</span>
+<span class="nc" id="L96">                .withConnectionFactory(connectionFactory)</span>
+<span class="nc" id="L97">                .withQueueName(smartSortQueue)</span>
+<span class="nc" id="L98">                .withMessageListener(eventProxyFilterListener)</span>
+<span class="nc" id="L99">                .withExceptionsToSwallow(FatalSmartSortException.class, JsonMappingException.class, RetriesExhaustedException.class)</span>
+<span class="nc" id="L100">                .withConsumerTagStrategy(appNameConsumerTagStrategy())</span>
+<span class="nc" id="L101">                .withConcurrentConsumers(concurrentConsumers)</span>
+<span class="nc" id="L102">                .withMaxConcurrentConsumers(maxConcurrentConsumers)</span>
+<span class="nc" id="L103">                .withAdviceChain(defaultAdviceChain(defaultMessageRecoverer(amqpTemplate,</span>
+                        metadataEventsExchange, smartSortRoutingKey, smartSortQueue)))
+<span class="nc" id="L105">                .build();</span>
+    }
+
+    @Bean
+    public MessageValidator&lt;MetadataUpdateEvent&gt; proxyValidator() {
+<span class="nc" id="L110">        return new EventProxyFilterMessageValidator();</span>
+    }
+
+    @Bean
+    public MessageProcessor&lt;MetadataUpdateEvent&gt; proxyProcessor(EventProxyFilterReceiver eventProxyFilterReceiver) {
+<span class="nc" id="L115">        return new EventProxyFilterMessageProcessor(eventProxyFilterReceiver);</span>
+    }
+
+    @Bean
+    public MessageFactory&lt;MetadataUpdateEvent&gt; proxyFactory() {
+<span class="nc" id="L120">        return new EventProxyFilterMessageFactory();</span>
+    }
+
+    @Bean
+    public RetriesExhaustedHandler&lt;MetadataUpdateEvent&gt; proxyHandler() {
+<span class="nc" id="L125">        return new EventProxyFilterExhaustedHandler();</span>
+    }
+
+    public String getMetadataEventsExchange() {
+<span class="nc" id="L129">        return metadataEventsExchange;</span>
+    }
+
+    public String getSmartSortRoutingKey() {
+<span class="nc" id="L133">        return smartSortRoutingKey;</span>
+    }
+
+    public String getMetadataCategorizationExchange() {
+<span class="nc" id="L137">        return metadataCategorizationExchange;</span>
+    }
+
+    public String getMetadataCategorizationRoutingKey() {
+<span class="nc" id="L141">        return metadataCategorizationRoutingKey;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

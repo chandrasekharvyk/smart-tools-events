@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/main/java/com/mrll/javelin/api/smartsort/service/CategorizationService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/main/java/com/mrll/javelin/api/smartsort/service/SmartDocService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/main/java/com/mrll/javelin/api/smartsort/util/DelegateUriBuilder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/main/java/com/mrll/javelin/api/smarttools/model/delegates/MetadataUpdateEvent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/main/java/com/mrll/javelin/api/smarttools/publisher/AuditingPublisher.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/main/java/com/mrll/javelin/api/smarttools/publisher/CategoryUpdatePublisher.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/main/java/com/mrll/javelin/api/smarttools/service/SmartDocService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/test/groovy/com/mrll/javelin/api/smarttools/delegate/AzureBlobDownloadDelegateTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/test/groovy/com/mrll/javelin/api/smarttools/delegate/CategorizationDelegateTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/test/groovy/com/mrll/javelin/api/smarttools/delegate/ChecklistMapperDelegateTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/test/groovy/com/mrll/javelin/api/smarttools/delegate/MetadataDelegateTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/test/groovy/com/mrll/javelin/api/smarttools/delegate/ProjectSettingsDelegateTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/test/groovy/com/mrll/javelin/api/smarttools/mongo/entity/SmartDocSpec.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/test/groovy/com/mrll/javelin/api/smarttools/mongo/repository/SmartDocRepositoryImplIntSpec.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/test/groovy/com/mrll/javelin/api/smarttools/mongo/repository/SmartDocRepositoryImplSpec.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/test/groovy/com/mrll/javelin/api/smarttools/service/ProjectSettingServiceTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/test/groovy/com/mrll/javelin/api/smarttools/service/SmartDocServiceSpec.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-common/src/test/groovy/com/mrll/javelin/api/smarttools/testapp/IntegrationTestApplication.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/acceptance/com/mrll/javelin/api/smarttools/SmartSortEndpointAccSpec.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/acceptance/com/mrll/javelin/api/smarttools/SmartSortProcessingAccSpec.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/AcceptanceSpecConfiguration.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/MQConfigs.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/TestFixtureHelper.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/TestProjectCreator.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/TestUser.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/config/TokenCache.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/acceptance/groovy/com/mrll/javelin/api/smarttools/tests/SmartSortProcessingAccSpec.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smartsort/SmartToolsEventsApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smartsort/service/CategorizationService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/SmartToolsEventsApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/CategorizationDeleteQueueConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/EventProxyFilterConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/MetadataCategorizationConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/SmartToolsEventsApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/config/config/CategorizationDeleteQueueConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterExhaustedHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterMessageFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterMessageProcessor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterMessageValidator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/messagingproxyfilter/EventProxyFilterReceiver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/AuditingPublisher.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/CategoryUpdatePublisher.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/model/CategorizationEvent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/publisher/model/CategoryUpdateEvent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/service/CategorizationService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizationDeleteExhaustedHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizationDeleteMessageFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizationDeleteProcessor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataExhaustedHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataMessageFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataMessageProcessor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/mrll/javelin/api/smarttools/suscriber/CategorizeMetadataValidator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/application.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/bootstrap.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/manifest-dev.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/manifest-prod.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/manifest-stage.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageFactoryTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageProcessorTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterMessageValidatorTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/messagingproxyfilter/EventProxyFilterReceiverTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteExhaustedHandlerTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteMessageFactoryTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizationDeleteProcessorTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataMessageFactoryTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataMessageProcessorTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/groovy/com/mrll/javelin/api/smartsort/suscriber/CategorizeMetadataValidatorTest.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-service/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-service/src/main/java/com/mrll/javelin/api/smartsort/SmartToolsServiceApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../smart-tools-service/src/main/java/com/mrll/javelin/api/smartsort/controller/SmartToolsServiceApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/github/smart-sort-service/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/github/smart-sort-service/src/main/java/com/mrll/javelin/api/smartsort/publisher/AuditingPublisher.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/github/smart-sort-service/src/main/java/com/mrll/javelin/api/smartsort/service/CategorizationService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/github/smart-sort-service/src/main/java/com/mrll/javelin/api/smartsort/service/ProjectSettingsService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

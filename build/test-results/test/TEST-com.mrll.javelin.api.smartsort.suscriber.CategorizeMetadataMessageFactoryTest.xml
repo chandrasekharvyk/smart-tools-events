@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mrll.javelin.api.smartsort.suscriber.CategorizeMetadataMessageFactoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-04-26T17:43:12" hostname="NA-300113" time="0.006">
+  <properties/>
+  <testcase name="Successful message creation" classname="com.mrll.javelin.api.smartsort.suscriber.CategorizeMetadataMessageFactoryTest" time="0.005"/>
+  <testcase name="Failed to create message" classname="com.mrll.javelin.api.smartsort.suscriber.CategorizeMetadataMessageFactoryTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EventProxyFilterExhaustedHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">smart-tools-events</a> &gt; <a href="index.source.html" class="el_package">com.mrll.javelin.api.smarttools.messagingproxyfilter</a> &gt; <span class="el_source">EventProxyFilterExhaustedHandler.java</span></div><h1>EventProxyFilterExhaustedHandler.java</h1><pre class="source lang-java linenums">package com.mrll.javelin.api.smarttools.messagingproxyfilter;
+
+import com.mrll.javelin.api.smarttools.model.delegates.MetadataUpdateEvent;
+import com.mrll.javelin.common.event.mq.exhaustion.RetriesExhaustedHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Map;
+
+<span class="nc" id="L10">public class EventProxyFilterExhaustedHandler implements RetriesExhaustedHandler&lt;MetadataUpdateEvent&gt; {</span>
+
+<span class="nc" id="L12">    private static final Logger LOG = LoggerFactory.getLogger(EventProxyFilterExhaustedHandler.class);</span>
+
+    @Override
+    public void handleRetriesExhausted(MetadataUpdateEvent message, Map&lt;String, Object&gt; headers) {
+<span class="nc" id="L16">        LOG.debug(&quot;message=maxRetriesExhausted projectId={}, metadataIds={}, originalStacktrace={}&quot;,</span>
+<span class="nc" id="L17">                message.getProjectId(), message.getMetadataIds(), headers.get(STACKTRACE_HEADER));</span>
+<span class="nc" id="L18">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

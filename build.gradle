@@ -1,0 +1,157 @@
+buildscript {
+    ext {
+        moduleVersion = project.hasProperty('moduleVersion') ? project.getProperty('moduleVersion') : '0.0.1'
+        artifactory_user = project.hasProperty('artifactory_user') ? project.getProperty('artifactory_user') : 'Set me with -P'
+        artifactory_password = project.hasProperty('artifactory_password') ? project.getProperty('artifactory_password') : 'Set me with -P'
+    }
+
+    ext['springBootVersion'] = '2.1.5.RELEASE'
+    ext['springCloudVersion'] = 'Greenwich.SR2'
+    ext['springDataMongoVersion'] = '2.1.5.RELEASE'
+
+    ext['ds1CommonEventVersion'] = '2.0.0'
+    ext['ds1CommonAuditVersion'] = '2.0.54'
+    ext['ds1CommonSecurityVersion'] = '2.0.0'
+    ext['ds1CommonShovelVersion'] = '2.0.8'
+    ext['ds1CommonWebVersion'] = '2.0.0'
+    ext['ds1CommonAccTestVersion'] = '2.0.0'
+    ext['ds1CommonTestVersion'] = '2.0.0'
+
+    ext['mongoJavaDriverVersion'] = '3.9.1'
+
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.1.5.RELEASE'
+    id 'java'
+    id 'groovy'
+    id 'com.jfrog.artifactory' version '4.9.3'
+    id 'jacoco'
+    id 'maven-publish'
+    id 'eclipse'
+    id 'idea'
+    //id 'com.gorylenko.gradle-git-properties' version '2.1.0'
+}
+
+jacoco {
+    toolVersion = '0.8.2'
+}
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+
+test.finalizedBy jacocoTestReport
+check.dependsOn jacocoTestReport
+
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+sourceSets {
+    acceptance {
+        groovy.srcDir file('src/acceptance/groovy')
+        resources.srcDir file('src/acceptance/resources')
+        compileClasspath += sourceSets.test.compileClasspath
+        runtimeClasspath += sourceSets.test.runtimeClasspath
+    }
+}
+
+repositories {
+    repositories {
+        maven {
+            credentials {
+                username 'downloader'
+                password 'downloader'
+            }
+            url 'https://merrillcorp.jfrog.io/merrillcorp/ds1'
+        }
+    }
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    implementation "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
+    implementation "org.springframework.cloud:spring-cloud-starter-config:${springBootVersion}"
+
+    implementation files('../smart-tools-common/build/libs/smart-tools-common-0.0.1.jar')
+    //compile fileTree(dir: '../smart-tools-common/build', include: ['*.jar'])
+
+
+    implementation "org.springframework.data:spring-data-mongodb:${springDataMongoVersion}"
+    implementation "org.mongodb:mongo-java-driver:${mongoJavaDriverVersion}"
+    implementation 'io.pivotal.cfenv:java-cfenv-boot:1.1.0.RELEASE'
+    implementation 'io.pivotal.cfenv:java-cfenv-boot-pivotal-scs:1.1.0.RELEASE'
+
+    implementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+
+    implementation "com.mrll.javelin:ds1-common-web:${ds1CommonWebVersion}"
+    implementation "com.mrll.javelin:ds1-common-security:${ds1CommonSecurityVersion}"
+    implementation "com.mrll.javelin:ds1-common-event:${ds1CommonEventVersion}"
+    implementation "com.mrll.javelin:ds1-common-rabbit-shovel:${ds1CommonShovelVersion}"
+    implementation "com.mrll.javelin:ds1-common-audit:${ds1CommonAuditVersion}"
+
+    implementation group: 'com.google.guava', name: 'guava', version: '28.1-jre'
+
+    testImplementation 'org.spockframework:spock-spring:1.3-groovy-2.5' // needed if wiring spring in spock tests.
+    testImplementation('org.codehaus.groovy:groovy-all:2.5.7') {
+        exclude module: 'groovy-test-junit5' // Prevents defaulting to the junit5 test runner (in eclipse)
+    }
+
+    testImplementation 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
+
+    testImplementation("com.mrll.javelin:ds1-common-acc-test:${ds1CommonAccTestVersion}")
+    testImplementation("com.mrll.javelin:ds1-common-test:${ds1CommonTestVersion}")
+    testImplementation 'com.mrll.javelin:ufo-test-kit:8.0.4'
+}
+
+springBoot {
+    buildInfo()
+}
+
+artifactory {
+    contextUrl = 'https://merrillcorp.jfrog.io/merrillcorp'
+    clientConfig.setIncludeEnvVars(true)
+    clientConfig.setEnvVarsExcludePatterns('*password*,*secret*,*psw*,*usr*,*artifactory*')
+
+    publish {
+        repository {
+            repoKey = 'ds1-services'
+            username = "$artifactory_user"
+            password = "$artifactory_password"
+        }
+        defaults {
+            publications('maven')
+            publishPom = false
+            publishArtifacts = true
+            publishBuildInfo = true
+            properties = ['version': "$moduleVersion"]
+        }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'com.mrll.javelin'
+            artifactId "${project.name}"
+            version "${moduleVersion}"
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url "https://merrillcorp.jfrog.io/merrillcorp/ds1-services"
+            credentials {
+                username = "${artifactory_user}"
+                password = "${artifactory_password}"
+            }
+        }
+    }
+}

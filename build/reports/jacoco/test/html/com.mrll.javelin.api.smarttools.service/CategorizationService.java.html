@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CategorizationService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">smart-tools-events</a> &gt; <a href="index.source.html" class="el_package">com.mrll.javelin.api.smarttools.service</a> &gt; <span class="el_source">CategorizationService.java</span></div><h1>CategorizationService.java</h1><pre class="source lang-java linenums">package com.mrll.javelin.api.smarttools.service;
+
+import com.google.common.base.Stopwatch;
+import com.mrll.javelin.api.smarttools.delegate.AzureBlobDownloadDelegate;
+import com.mrll.javelin.api.smarttools.delegate.CategorizationDelegate;
+import com.mrll.javelin.api.smarttools.delegate.ChecklistMapperDelegate;
+import com.mrll.javelin.api.smarttools.delegate.MetadataDelegate;
+import com.mrll.javelin.api.smarttools.exception.FatalSmartSortException;
+import com.mrll.javelin.api.smarttools.model.delegates.*;
+import com.mrll.javelin.api.smarttools.mongo.entity.SmartDoc;
+import com.mrll.javelin.api.smarttools.model.delegates.Metadata;
+import com.mrll.javelin.api.smarttools.mongo.entity.SmartDoc;
+import com.mrll.javelin.api.smarttools.publisher.AuditingPublisher;
+import com.mrll.javelin.api.smarttools.publisher.CategorizationPublisher;
+import com.mrll.javelin.api.smarttools.publisher.model.CategorizationEvent;
+import com.mrll.javelin.api.smarttools.service.SmartDocService;
+import com.mrll.javelin.cmcs.domain.MetadataType;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
+import java.io.*;
+import java.net.URL;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+
+@Service
+public class CategorizationService {
+    private static final String OCR_FORM = &quot;OCR&quot;;
+
+    private AzureBlobDownloadDelegate azureBlobDownloadDelegate;
+    private MetadataDelegate metadataDelegate;
+    private CategorizationDelegate categorizationDelegate;
+    private ChecklistMapperDelegate checklistMapperDelegate;
+    private SmartDocService smartDocService;
+    private CategorizationPublisher categorizationPublisher;
+    private AuditingPublisher auditingPublisher;
+<span class="nc" id="L53">    private int PAGE_WORDS = 600;</span>
+<span class="nc" id="L54">    private int PAGES = 50;</span>
+<span class="nc" id="L55">    private String XML_PAGE = &quot;PAGE&quot;;</span>
+<span class="nc" id="L56">    private final float cutOffPrediction = 0.6f;</span>
+<span class="nc" id="L57">    private final int MAX_FOLDER_SUGGESTION = 5;</span>
+
+<span class="fc" id="L59">    private static final Logger LOGGER = LoggerFactory.getLogger(CategorizationService.class);</span>
+
+    @Autowired
+    public CategorizationService(AzureBlobDownloadDelegate azureBlobDownloadDelegate,
+                                 MetadataDelegate metadataDelegate,
+                                 CategorizationDelegate categorizationDelegate,
+                                 ChecklistMapperDelegate checklistMapperDelegate,
+                                 SmartDocService smartDocService,
+<span class="nc" id="L67">                                 CategorizationPublisher categorizationPublisher, AuditingPublisher auditingPublisher) {</span>
+<span class="nc" id="L68">        this.azureBlobDownloadDelegate = azureBlobDownloadDelegate;</span>
+<span class="nc" id="L69">        this.metadataDelegate = metadataDelegate;</span>
+<span class="nc" id="L70">        this.categorizationDelegate = categorizationDelegate;</span>
+<span class="nc" id="L71">        this.smartDocService = smartDocService;</span>
+<span class="nc" id="L72">        this.categorizationPublisher = categorizationPublisher;</span>
+<span class="nc" id="L73">        this.checklistMapperDelegate = checklistMapperDelegate;</span>
+<span class="nc" id="L74">        this.auditingPublisher = auditingPublisher;</span>
+<span class="nc" id="L75">    }</span>
+
+    public SmartDoc findCategoriesAndSuggestions(final MetadataUpdateEvent event) {
+<span class="nc" id="L78">        Stopwatch stopwatch = Stopwatch.createStarted();</span>
+<span class="nc" id="L79">        LOGGER.info(&quot;method=findCategoriesAndSuggestions trace=smartToolsProcessing message=start event={}&quot;, event);</span>
+<span class="nc" id="L80">        List&lt;Metadata&gt; metaDatas = metadataDelegate.getMultipleMetadata(event.getProjectId(), event.getMetadataIds());</span>
+<span class="nc" id="L81">        SmartDoc smartDoc = findDocCategory(event, metaDatas);</span>
+
+<span class="nc" id="L83">        HashMap&lt;String, FolderInfo&gt; sandboxFolderInfo = getSandboxFolderStructures(event);</span>
+<span class="nc" id="L84">        HashMap&lt;String, ChecklistMappingResponse&gt; checklistMappingResponseHashMap = getFolderSuggestion(event, sandboxFolderInfo);</span>
+
+<span class="nc" id="L86">        List&lt;String&gt; matchingFolderSortedPredictions = compareCategoriesWithLabels(checklistMappingResponseHashMap, smartDoc);</span>
+<span class="nc" id="L87">        List&lt;FolderSuggestion&gt; folderSuggestions = new ArrayList&lt;&gt;();</span>
+
+<span class="nc bnc" id="L89" title="All 2 branches missed.">        for (String matchingFolder : matchingFolderSortedPredictions) {</span>
+<span class="nc" id="L90">            folderSuggestions.add(sandboxFolderInfo.entrySet()</span>
+<span class="nc" id="L91">                    .stream()</span>
+<span class="nc" id="L92">                    .filter(entry -&gt; entry.getValue().getPath().equals(matchingFolder))</span>
+<span class="nc" id="L93">                    .map(Map.Entry::getValue)</span>
+<span class="nc" id="L94">                    .map(it -&gt; it.getFolderSuggestion())</span>
+<span class="nc" id="L95">                    .collect(Collectors.toList()).get(0)); //Will never be empty list since we match it.</span>
+<span class="nc" id="L96">        }</span>
+
+<span class="nc" id="L98">        smartDoc.setSuggestedFolders(folderSuggestions);</span>
+<span class="nc" id="L99">        LOGGER.info(&quot;method=createSmartDoc trace=smartToolsProcessing message=saveCategoriesAndSuggestions projectId={} metadataId={} category={} folderSuggestions={}&quot;,</span>
+<span class="nc" id="L100">                event.getProjectId(), event.getMetadataIds().get(0), smartDoc.getCategories(), folderSuggestions);</span>
+
+<span class="nc" id="L102">        smartDocService.createSmartDoc(smartDoc.getProjectId(), smartDoc.getMetadataId(), smartDoc.getBlobId(), smartDoc.getCategories(), smartDoc.getModelVersion(), folderSuggestions);</span>
+<span class="nc" id="L103">        categorizationPublisher.publishCategorizationEvent(</span>
+<span class="nc" id="L104">                new CategorizationEvent().setProjectId(event.getProjectId())</span>
+<span class="nc" id="L105">                        .setMetadataId(smartDoc.getMetadataId())</span>
+<span class="nc" id="L106">                        .setParentId(metaDatas.get(0).getParentId())</span>
+<span class="nc" id="L107">                        .setPredictions(smartDoc.getCategories())</span>
+<span class="nc" id="L108">                        .setFolderSuggestions(folderSuggestions));</span>
+
+<span class="nc" id="L110">        auditingPublisher.publishAuditCategories(smartDoc, null);</span>
+<span class="nc" id="L111">        stopwatch.stop();</span>
+<span class="nc" id="L112">        LOGGER.info(&quot;method=findCategoriesAndSuggestions trace=smartToolsProcessing message=done projectId={} elapsedTime={}&quot;, event.getProjectId(), stopwatch.elapsed(TimeUnit.MILLISECONDS));</span>
+<span class="nc" id="L113">        return smartDoc;</span>
+    }
+
+    public SmartDoc findDocCategory(final MetadataUpdateEvent event, List&lt;Metadata&gt; metadatas) {
+<span class="nc" id="L117">        LOGGER.info(&quot;method=findDocCategory trace=smartToolsProcessing message=start event={}&quot;, event);</span>
+<span class="nc" id="L118">        Stopwatch stopwatch = null;</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">        for (Metadata metadata : metadatas) {</span>
+<span class="nc bnc" id="L120" title="All 2 branches missed.">            if (metadata.getFileroomType().equals(MetadataType.SANDBOX)) {</span>
+<span class="nc" id="L121">                LOGGER.info(&quot;method=findDocCategory trace=smartToolsProcessing message=startingCategorizationForDoc metadata={}&quot;, metadata);</span>
+
+<span class="nc" id="L123">                stopwatch = Stopwatch.createStarted();</span>
+
+<span class="nc" id="L125">                BlobDetail blobDetail = getRenditionFormInfo(metadata.getBlobDetails(), OCR_FORM);</span>
+
+<span class="nc" id="L127">                LOGGER.info(&quot;method=findDocCategory trace=smartToolsProcessing message=retrievedBlobDetail blobDetail={}&quot;, blobDetail);</span>
+
+<span class="nc bnc" id="L129" title="All 2 branches missed.">                if (blobDetail == null)</span>
+                {
+<span class="nc" id="L131">                    LOGGER.error(&quot;method=findDocCategory trace=smartToolsProcessing errorMessage=unableToFindOcrRenditionForDocument  metadataId={}&quot;, metadata.getId());</span>
+<span class="nc" id="L132">                    throw new FatalSmartSortException(&quot;Unable to find the OCR rendition for document with metadataId &quot; + metadata.getId());</span>
+                }
+
+                String ocrContent;
+
+                try {
+<span class="nc" id="L138">                    InputStream blob = downloadBlob(metadata, blobDetail);</span>
+
+<span class="nc bnc" id="L140" title="All 2 branches missed.">                    if (blob == null) {</span>
+<span class="nc" id="L141">                        LOGGER.error(&quot;method=findDocCategory trace=smartToolsProcessing errorMessage=failedToFindOcrBlobForDocument  metadataId={}&quot;, metadata.getId());</span>
+<span class="nc" id="L142">                        throw new FatalSmartSortException(&quot;failed to find OCR blob for document with metadataId &quot; + metadata.getId());</span>
+                    }
+
+<span class="nc" id="L145">                    ocrContent = IOUtils.toString(blob, &quot;UTF-8&quot;);</span>
+
+<span class="nc" id="L147">                } catch (IOException e) {</span>
+<span class="nc" id="L148">                    LOGGER.error(&quot;method=findDocCategory trace=smartToolsProcessing errorMessage=failedToGetOcrContent  metadataId={} blobId={}&quot;, metadata.getId(), blobDetail.getBlobId(), e);</span>
+<span class="nc" id="L149">                    throw new FatalSmartSortException(&quot;failed to find OCR blob for document with metadataId &quot; + metadata.getId(), e);</span>
+<span class="nc" id="L150">                }</span>
+
+<span class="nc bnc" id="L152" title="All 2 branches missed.">                if (ocrContent == null) {</span>
+<span class="nc" id="L153">                    LOGGER.error(&quot;method=findDocCategory trace=smartToolsProcessing errorMessage=ocrContentIsNull  metadataId &quot; + metadata.getId());</span>
+<span class="nc" id="L154">                    throw new FatalSmartSortException(&quot;Unable to download the OCR rendition for document with metadataId &quot; + metadata.getId());</span>
+                }
+
+                //TODO: Remove this comment/latest
+
+<span class="nc" id="L159">                String reducedOcr = reduceOcr(ocrContent, metadata.getId());</span>
+
+<span class="nc" id="L161">                CategorizationResponse response =</span>
+<span class="nc" id="L162">                        categorizationDelegate.sendOCRData(event.getProjectId(), metadata.getId(), reducedOcr, metadata.getName());</span>
+
+<span class="nc" id="L164">                stopwatch.stop();</span>
+<span class="nc" id="L165">                LOGGER.info(&quot;method=findDocCategory trace=smartToolsProcessing message=done projectId={} metadataId={} category={} elapsedTime={}&quot;,</span>
+<span class="nc" id="L166">                        event.getProjectId(), metadata.getId(), response.toString(), stopwatch.elapsed(TimeUnit.MILLISECONDS));</span>
+
+<span class="nc" id="L168">                SmartDoc smartDoc = new SmartDoc().setProjectId(event.getProjectId())</span>
+<span class="nc" id="L169">                        .setMetadataId(metadata.getId())</span>
+<span class="nc" id="L170">                        .setBlobId(blobDetail.getBlobId())</span>
+<span class="nc" id="L171">                        .setCategories(response.getPredictions())</span>
+<span class="nc" id="L172">                        .setModelVersion(response.getModelVersion());</span>
+<span class="nc" id="L173">                return smartDoc;</span>
+            }
+
+<span class="nc" id="L176">        }</span>
+<span class="nc" id="L177">        return null;</span>
+    }
+
+
+    /**
+     * Filter matching categories between doc content categorization and checklist mapper
+     *
+     * @param checklistMappingResponseHashMap
+     * @param smartDoc
+     * @return
+     */
+    private List&lt;String&gt; compareCategoriesWithLabels(HashMap&lt;String, ChecklistMappingResponse&gt; checklistMappingResponseHashMap, SmartDoc smartDoc) {
+<span class="nc" id="L189">        LOGGER.info(&quot;method=compareCategoriesWithLabels trace=smartToolsProcessing message=start&quot;);</span>
+<span class="nc" id="L190">        List&lt;String&gt; folderNames = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L191">        List&lt;String&gt; categoryPredictions = smartDoc.getCategories().stream()</span>
+<span class="nc" id="L192">                .map(x -&gt; x.getLabel().toLowerCase())</span>
+<span class="nc" id="L193">                .collect(Collectors.toList());</span>
+<span class="nc" id="L194">        Map&lt;String, Integer&gt; folderNamesMatchingMap = new HashMap&lt;&gt;();</span>
+<span class="nc bnc" id="L195" title="All 2 branches missed.">        for (Map.Entry&lt;String, ChecklistMappingResponse&gt; entry : checklistMappingResponseHashMap.entrySet()) {</span>
+<span class="nc" id="L196">            int matchingLabels = entry.getValue()</span>
+<span class="nc" id="L197">                    .getPredictions()</span>
+<span class="nc" id="L198">                    .stream()</span>
+<span class="nc" id="L199">                    .map(x -&gt; x.getLabel().toLowerCase()).collect(Collectors.toList())</span>
+<span class="nc" id="L200">                    .stream()</span>
+<span class="nc" id="L201">                    .filter(categoryPredictions::contains)</span>
+<span class="nc" id="L202">                    .collect(Collectors.toList()).size();</span>
+<span class="nc" id="L203">            folderNamesMatchingMap.put(entry.getKey(), matchingLabels);</span>
+<span class="nc" id="L204">        }</span>
+<span class="nc" id="L205">        LOGGER.info(&quot;method=compareCategoriesWithLabels trace=smartToolsProcessing folderLabelMatches={} projectId={} metadataId={}&quot;,</span>
+<span class="nc" id="L206">                folderNamesMatchingMap, smartDoc.getProjectId(), smartDoc.getMetadataId());</span>
+
+<span class="nc" id="L208">        folderNames.addAll(folderNamesMatchingMap.entrySet()</span>
+<span class="nc" id="L209">                .stream()</span>
+<span class="nc bnc" id="L210" title="All 2 branches missed.">                .filter(x -&gt; x.getValue() &gt;= 1)</span>
+<span class="nc" id="L211">                .sorted(Map.Entry.&lt;String, Integer&gt;comparingByValue().reversed())</span>
+<span class="nc" id="L212">                .limit(MAX_FOLDER_SUGGESTION)</span>
+<span class="nc" id="L213">                .map(Map.Entry::getKey).collect(Collectors.toList()));</span>
+<span class="nc" id="L214">        LOGGER.info(&quot;method=compareCategoriesWithLabels trace=smartToolsProcessing message=done folderNames={} projectId={} metadataId={}&quot;,</span>
+<span class="nc" id="L215">                folderNames, smartDoc.getProjectId(), smartDoc.getMetadataId());</span>
+<span class="nc" id="L216">        return folderNames;</span>
+    }
+
+
+    public void deleteDocCategory(final MetadataUpdateEvent event) {
+<span class="nc" id="L221">        List&lt;SmartDoc&gt; smartDocs = smartDocService.deleteSmartDoc(event.getProjectId(), event.getMetadataIds());</span>
+<span class="nc" id="L222">        LOGGER.info(&quot;method=deleteDocCategory trace=smartToolsProcessing message=start details=Deleted smart docs count {}&quot;, smartDocs.size());</span>
+<span class="nc" id="L223">    }</span>
+
+    private BlobDetail getRenditionFormInfo(List&lt;BlobDetail&gt; blobDetails, String formType) {
+
+<span class="nc" id="L227">        LOGGER.info(&quot;method=getRenditionFormInfo trace=smartToolsProcessing message=retrieving blob details - blobDetails={}&quot;, blobDetails);</span>
+
+<span class="nc bnc" id="L229" title="All 2 branches missed.">        for (BlobDetail blobDetail : blobDetails) {</span>
+
+<span class="nc" id="L231">            LOGGER.info(&quot;method=getRenditionFormInfo trace=smartToolsProcessing message=checking blob detail - blobDetail={}&quot;, blobDetail);</span>
+
+<span class="nc bnc" id="L233" title="All 2 branches missed.">            if (blobDetail.getProcessName().equals(formType)) {</span>
+<span class="nc" id="L234">                LOGGER.info(&quot;method=getRenditionFormInfo trace=smartToolsProcessing message=done formType={} found - blobDetail={}&quot;, formType, blobDetail);</span>
+<span class="nc" id="L235">                return blobDetail;</span>
+            }
+<span class="nc" id="L237">        }</span>
+
+<span class="nc" id="L239">        LOGGER.error(&quot;method=getPdfcFormInfo trace=smartToolsProcessing  errorMessage=unableToLocateBlobDetail blobDetails={}&quot;, blobDetails);</span>
+
+<span class="nc" id="L241">        return null;</span>
+    }
+
+    private InputStream downloadBlob(Metadata metadata, BlobDetail blobDetail) throws IOException {
+<span class="nc" id="L245">        return azureBlobDownloadDelegate.getDocument(metadata.getProjectId(), blobDetail.getBlobId());</span>
+    }
+
+    /**
+     * Reduce OCR Text size that will take out xml tags and has max of PAGE_WORDS * PAGES words. if exeeds then send PAGE_WORDS words per each page.
+     *
+     * @param octText
+     * @return
+     */
+    private String reduceOcr(String octText, String metadataId) {
+<span class="nc" id="L255">        LOGGER.info(&quot;method=reduceOcr trace=smartToolsProcessing message=start&quot;);</span>
+<span class="nc" id="L256">        StringBuffer stringBuffer = new StringBuffer();</span>
+        try {
+<span class="nc" id="L258">            URL styleSheetUrl = getClass().getClassLoader().getResource(&quot;onlytext.xsl&quot;);</span>
+<span class="nc" id="L259">            StreamSource stylesSource = new StreamSource(new File(styleSheetUrl.toURI()));</span>
+<span class="nc" id="L260">            Transformer transformer = TransformerFactory.newInstance()</span>
+<span class="nc" id="L261">                    .newTransformer(stylesSource);</span>
+
+<span class="nc" id="L263">            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();</span>
+<span class="nc" id="L264">            DocumentBuilder builder = factory.newDocumentBuilder();</span>
+
+<span class="nc" id="L266">            Document document = builder.parse(new InputSource(new StringReader(octText)));</span>
+<span class="nc" id="L267">            StringWriter stringWriter = new StringWriter();</span>
+<span class="nc" id="L268">            transformer.transform(new DOMSource(document), new StreamResult(stringWriter));</span>
+<span class="nc bnc" id="L269" title="All 2 branches missed.">            if (stringWriter.toString().split(&quot; &quot;).length &lt;= (PAGE_WORDS * PAGES)) {</span>
+<span class="nc" id="L270">                LOGGER.info(&quot;method=reduceOcr tripped xml string has less than 30000 words for metadataId={}&quot;, metadataId);</span>
+<span class="nc" id="L271">                return stringWriter.toString();</span>
+            }
+<span class="nc" id="L273">            Object[] stringTokenPages = stringWriter.toString().split(XML_PAGE);</span>
+<span class="nc bnc" id="L274" title="All 2 branches missed.">            for (int i = 0; i &lt; stringTokenPages.length; i++) {</span>
+<span class="nc" id="L275">                Object[] tokensPerPage = stringTokenPages[i].toString().split(&quot; &quot;);</span>
+<span class="nc bnc" id="L276" title="All 2 branches missed.">                if (tokensPerPage.length &gt; PAGE_WORDS) {</span>
+<span class="nc" id="L277">                    LOGGER.info(&quot;method=reduceOcr,string has more page words for metadataId={}&quot;, metadataId);</span>
+<span class="nc" id="L278">                    Object[] tokens = ArrayUtils.subarray(tokensPerPage, 0, PAGE_WORDS);</span>
+<span class="nc" id="L279">                    stringBuffer.append(StringUtils.join(tokens, ' '));</span>
+<span class="nc" id="L280">                } else {</span>
+<span class="nc" id="L281">                    stringBuffer.append(StringUtils.join(tokensPerPage, ' '));</span>
+                }
+            }
+
+<span class="nc" id="L285">        } catch (Exception ex) {</span>
+<span class="nc" id="L286">            ex.printStackTrace();</span>
+<span class="nc" id="L287">        }</span>
+<span class="nc" id="L288">        LOGGER.info(&quot;method=reduceOcr trace=smartToolsProcessing message=done&quot;);</span>
+<span class="nc" id="L289">        return stringBuffer.toString();</span>
+    }
+
+    public HashMap&lt;String, ChecklistMappingResponse&gt; getFolderSuggestion(MetadataUpdateEvent event, HashMap&lt;String, FolderInfo&gt; sandboxFolderInfo) {
+<span class="nc" id="L293">        LOGGER.info(&quot;method=getFolderSuggestion trace=smartToolsProcessing message=start&quot;);</span>
+<span class="nc" id="L294">        List&lt;String&gt; folderPaths = sandboxFolderInfo.entrySet().stream().map(res -&gt; res.getValue().getPath()).collect(Collectors.toList());</span>
+<span class="nc" id="L295">        HashMap&lt;String, ChecklistMappingResponse&gt; checklistMappingResponseHashMap = checklistMapperDelegate.getTaxonomyMappings(event, folderPaths);</span>
+<span class="nc" id="L296">        LOGGER.info(&quot;method=getFolderSuggestion trace=smartToolsProcessing message=done&quot;);</span>
+<span class="nc" id="L297">        return checklistMappingResponseHashMap;</span>
+    }
+
+    private HashMap&lt;String, FolderInfo&gt; getSandboxFolderStructures(final MetadataUpdateEvent event) {
+<span class="nc" id="L301">        LOGGER.info(&quot;method=getSandboxFolderStructures trace=smartToolsProcessing message=start&quot;);</span>
+<span class="nc" id="L302">        String sandboxID = metadataDelegate.getSandboxFileRoomID(event.getProjectId(), event.getMetadataIds());</span>
+<span class="nc" id="L303">        List&lt;Metadata&gt; sandboxMetadata = metadataDelegate.getSandboxFolders(event.getProjectId(), sandboxID, event.getMetadataIds());</span>
+
+<span class="nc" id="L305">        Map&lt;String, Metadata&gt; metadataIDMap = sandboxMetadata.stream().collect(</span>
+<span class="nc" id="L306">                Collectors.toMap(x -&gt; x.getId(), x -&gt; x));</span>
+
+<span class="nc" id="L308">        Iterator metadataIterator = metadataIDMap.entrySet().iterator();</span>
+<span class="nc" id="L309">        HashMap&lt;String, FolderInfo&gt; foldersHashMap = new HashMap&lt;&gt;();</span>
+        //For each metadataID it iterates to find parent in the tree
+<span class="nc bnc" id="L311" title="All 2 branches missed.">        while (metadataIterator.hasNext()) {</span>
+<span class="nc" id="L312">            Map.Entry mapElement = (Map.Entry) metadataIterator.next();</span>
+<span class="nc" id="L313">            String metadataId = ((Metadata) mapElement.getValue()).getId();</span>
+<span class="nc" id="L314">            foldersHashMap.putAll(getParents(metadataIDMap, metadataId, sandboxID, new HashMap&lt;String, FolderInfo&gt;()));</span>
+<span class="nc" id="L315">        }</span>
+<span class="nc" id="L316">        LOGGER.info(&quot;method=uniqueSandboxFlatFolders trace=smartToolsProcessing message=done project={} metadataIds={} folders={}&quot;, event.getProjectId(), event.getMetadataIds(), foldersHashMap);</span>
+<span class="nc" id="L317">        return foldersHashMap;</span>
+    }
+
+    /**
+     * Get parents list until it reaches sandbox
+     * returns [fol1,abc,test] if test is last child of fol1 given fol1/abc/test order.
+     *
+     * @param metadataHashMap
+     * @param id
+     * @param sandboxID
+     * @param foldersHashMap
+     * @return
+     */
+    private HashMap&lt;String, FolderInfo&gt; getParents(Map&lt;String, Metadata&gt; metadataHashMap, String id, String sandboxID, HashMap&lt;String, FolderInfo&gt; foldersHashMap) {
+<span class="nc bnc" id="L331" title="All 2 branches missed.">        if (!id.equalsIgnoreCase(sandboxID)) {</span>
+<span class="nc" id="L332">            String parentId = metadataHashMap.get(id).getParentId();</span>
+<span class="nc" id="L333">            FolderInfo folderInfo = new FolderInfo().setId(id)</span>
+<span class="nc" id="L334">                    .setName(metadataHashMap.get(id).getName())</span>
+<span class="nc" id="L335">                    .setIndex(metadataHashMap.get(id).getDisplayIndex())</span>
+<span class="nc" id="L336">                    .setParentId(parentId);</span>
+<span class="nc" id="L337">            foldersHashMap.put(id, folderInfo);</span>
+<span class="nc" id="L338">            foldersHashMap.get(id).prefixPath(metadataHashMap.get(id).getName());</span>
+
+<span class="nc" id="L340">            FolderInfo childFolder = foldersHashMap.entrySet()</span>
+<span class="nc" id="L341">                    .stream()</span>
+<span class="nc" id="L342">                    .filter(res -&gt; res.getValue().getParentId().equals(id))</span>
+<span class="nc" id="L343">                    .map(Map.Entry::getValue)</span>
+<span class="nc" id="L344">                    .findFirst().orElse(null);</span>
+<span class="nc bnc" id="L345" title="All 2 branches missed.">            if (childFolder != null) {</span>
+                //Have Parent appended to all child folders
+                //childFolder.prefixPath(metadataHashMap.get(id).getName());
+<span class="nc" id="L348">                foldersHashMap.entrySet().stream()</span>
+<span class="nc bnc" id="L349" title="All 2 branches missed.">                        .filter(res -&gt; !res.getValue().getId().equals(id))</span>
+<span class="nc" id="L350">                        .map(Map.Entry::getValue).map(it -&gt; it.prefixPath(metadataHashMap.get(id).getName())).collect(Collectors.toList());</span>
+            }
+
+<span class="nc bnc" id="L353" title="All 2 branches missed.">            if (!parentId.equalsIgnoreCase(sandboxID)) {</span>
+<span class="nc" id="L354">                getParents(metadataHashMap, parentId, sandboxID, foldersHashMap);</span>
+            }
+        }
+
+<span class="nc" id="L358">        return foldersHashMap;</span>
+    }
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

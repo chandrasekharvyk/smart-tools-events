@@ -1,0 +1,4 @@
+fileStoreServiceHost: "file-store-service"
+importManifestServiceHost: "import-manifest-service"
+defaultCfParentDomain: "us2.devb.foundry.mrll.com"
+tokenServiceHost: "token-service"

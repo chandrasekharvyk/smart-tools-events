@@ -1,0 +1,9 @@
+hitIdPrefix: "redactionprocessing-acc-"
+clientAppId: "redaction-processing-service-acc-tests"
+service:
+  authorized:
+    id: "redaction-processing-service"
+    password: "redactionprocessingservicepassword"
+
+message:
+  deadLetterExchange: "dead-letter-exchange"

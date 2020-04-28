@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mrll.javelin.api.smartsort.messagingproxyfilter.EventProxyFilterMessageProcessorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-04-26T17:43:12" hostname="NA-300113" time="0.035">
+  <properties/>
+  <testcase name="Message successfully processed" classname="com.mrll.javelin.api.smartsort.messagingproxyfilter.EventProxyFilterMessageProcessorTest" time="0.031"/>
+  <testcase name="Message successfully processed for copy" classname="com.mrll.javelin.api.smartsort.messagingproxyfilter.EventProxyFilterMessageProcessorTest" time="0.001"/>
+  <testcase name="Downstream processing error throws an exception" classname="com.mrll.javelin.api.smartsort.messagingproxyfilter.EventProxyFilterMessageProcessorTest" time="0.003"/>
+  <system-out><![CDATA[12:43:12.725 [Test worker] INFO com.mrll.javelin.api.smarttools.messagingproxyfilter.EventProxyFilterMessageProcessor - method=processMessage trace=smartToolsProcessing message=receivedMessageFromQueue projectId=project_id_1 metadataIds=[m1] updateType=DONE processingType=DOC_REPLACE
+12:43:12.729 [Test worker] INFO com.mrll.javelin.api.smarttools.messagingproxyfilter.EventProxyFilterMessageProcessor - method=processMessage trace=smartToolsProcessing message=receivedMessageFromQueue projectId=project_id_1 metadataIds=[m1] updateType=DONE processingType=DOC_COPY
+12:43:12.731 [Test worker] INFO com.mrll.javelin.api.smarttools.messagingproxyfilter.EventProxyFilterMessageProcessor - method=processMessage trace=smartToolsProcessing message=receivedMessageFromQueue projectId=project_id_1 metadataIds=[m1] updateType=DONE processingType=DOC_REPLACE
+12:43:12.731 [Test worker] INFO com.mrll.javelin.api.smarttools.messagingproxyfilter.EventProxyFilterReceiver - method=handleValidMessage trace=smartToolsProcessing message=startMetadataUpdateEvent projectId=project_id_1 metadataIds=[m1] updateType=DONE processingType=DOC_REPLACE
+12:43:12.731 [Test worker] INFO com.mrll.javelin.api.smarttools.messagingproxyfilter.EventProxyFilterReceiver - method=isSmartToolsEnabled trace=smartToolsProcessing message=start projectId=project_id_1 
+12:43:12.732 [Test worker] ERROR com.mrll.javelin.api.smarttools.messagingproxyfilter.EventProxyFilterMessageProcessor - method=processMessage trace=smartToolsProcessing message=problemProcessingMessage projectId=project_id_1 metadataIds=[m1] updateType=DONE processingType=DOC_REPLACE errorMessage=null
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

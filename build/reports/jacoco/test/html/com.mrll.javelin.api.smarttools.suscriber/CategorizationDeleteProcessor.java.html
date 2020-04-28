@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CategorizationDeleteProcessor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">smart-tools-events</a> &gt; <a href="index.source.html" class="el_package">com.mrll.javelin.api.smarttools.suscriber</a> &gt; <span class="el_source">CategorizationDeleteProcessor.java</span></div><h1>CategorizationDeleteProcessor.java</h1><pre class="source lang-java linenums">package com.mrll.javelin.api.smarttools.suscriber;
+
+import com.mrll.javelin.api.smarttools.model.delegates.MetadataUpdateEvent;
+import com.mrll.javelin.api.smarttools.service.CategorizationService;
+import com.mrll.javelin.common.event.mq.exhaustion.MessageProcessor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class CategorizationDeleteProcessor implements MessageProcessor&lt;MetadataUpdateEvent&gt; {
+<span class="fc" id="L10">    private static final Logger LOG = LoggerFactory.getLogger(CategorizeMetadataMessageProcessor.class);</span>
+
+    private CategorizationService categorizationService;
+
+<span class="fc" id="L14">    public CategorizationDeleteProcessor(CategorizationService categorizationService) {</span>
+<span class="fc" id="L15">        this.categorizationService = categorizationService;</span>
+<span class="fc" id="L16">    }</span>
+
+    @Override
+    public void processMessage(MetadataUpdateEvent message) {
+
+<span class="fc" id="L21">        LOG.info(&quot;method=processMessage, message=received delete msg from queue, msg={}&quot;, message);</span>
+<span class="fc" id="L22">        categorizationService.deleteDocCategory(message);</span>
+
+<span class="fc" id="L24">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

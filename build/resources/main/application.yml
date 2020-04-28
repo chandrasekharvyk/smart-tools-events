@@ -1,0 +1,143 @@
+info:
+  description: "Service to categorize Done documents on Smart enabled projects"
+  apiDocumentation: "TBD"
+
+server:
+  port: 8025
+  maxHttpHeaderSize: 65536
+
+spring:
+  data:
+    mongodb:
+      database: smartToolsDB
+
+local-message:
+  metadataEventsExchange : ${message.metadataEventsExchange}
+  smartSortKey : ${message.metadataEventsDoneRoutingKey}
+  updateRoutingKey : ${message.metadataEventsUpdateRoutingKey}
+  smartSortQueue : ${message.smartSortQueue}
+  metadataCategorizationExchange : ${message.metadataCategorizationExchange}
+  metadataCategorizationRoutingKey : ${message.metadataCategorizationRoutingKey}
+  metadataCategorizationQueue : ${message.metadataCategorizationQueue}
+  smartSortDeleteQueue : ${message.smartSortDeleteQueue}
+  smartSortDeleteKey : ${message.smartSortDeleteKey}
+
+web-event:
+  smartCategorizationResultExchange: 'ds1-smartsort-result-exchange'
+  smartCategorizationResultRoutingKey: ''
+
+javelin:
+  appKey: SMARTSORT
+  common:
+    web:
+      config:
+        swagger:
+          controllerPackage: com.mrll.javelin.api.smartsort.controller
+          author: Chandra sekhar
+          apiName: SmartSort API
+          apiVersion: 1.0.0
+          apiDescription: API for project Smart Categorization of documents
+  message:
+    autoLogin: true
+  security:
+    resourceDetails:
+      enabled: false
+    tokens:
+      service:
+        id: smart-tools-events
+        password: smartsortpassword
+
+shovel:
+  smartSortProcessingQueue:
+    schedule:
+      fixedDelayMinutes: 10
+    prefetchCount: 1000
+    addHeaders: true
+    apiName: moveFromSmartSortQueueDLQ
+    targetQueueName: ${local-message.smartSortQueue}
+    sourceQueueName: ${local-message.smartSortQueue}-dl
+
+
+messaging-config:
+  maxRetries: 5
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,heapdump,metrics
+  endpoint:
+    health:
+      show-details: always
+    info:
+      git:
+        mode: full
+
+logging:
+  level:
+     com.mrll.javelin.api.smartsort: DEBUG
+     org.apache.http.wire: INFO
+     org.apache.http: INFO
+
+
+serviceUrl:
+  blobDownloadUrl:
+    http://azure-blob-download-service/api/azureblobdownload/v1/projects/{projectId}/blobs/{fileId}
+  blobDownloadExistsUrl:
+    http://azure-blob-download-service/javelin/api/blob/download/{projectId}/{fileId}/exists
+  metadataUrl:
+    http://doc-metadata-service
+  metadataSearchUrl:
+    http://doc-metadata-service/api/projects/{projectId}/metadata/v2/search
+  aiCategorizationUrl:
+    http://ai-smart-categorization-service/api/models/smartcategorization/
+  aiCategorizationLabelUrl:
+    http://ai-smart-categorization-service/api/models/smartcategorization/labels/
+  projectSettingsUrl:
+    http://project-composite-service/api/v2/projects/{projectId}/settings
+  aiChecklistMapperUrl:
+    http://ai-checklist-mapper-service/api/models/checklistmapper/
+
+
+---
+spring:
+  profiles: pr-acceptance
+  rabbitmq:
+    virtualHost: /
+    managementUri: http://guest:guest@localhost:15672/api/
+    addresses: amqp://guest:guest@127.0.0.1:5672//
+
+
+local-message:
+  metadataEventsExchange: 'pr-ds1-metadata-exchange'
+  smartSortKey: 'done'
+  updateRoutingKey: 'update'
+  smartSortQueue: 'pr-ds1-smartsort-q'
+  metadataCategorizationExchange: 'pr-smart-sort-categorization-exchange'
+  metadataCategorizationRoutingKey: 'smart-sort-categorization-key'
+  metadataCategorizationQueue: 'pr-smart-sort-categorization-queue'
+  smartSortDeleteQueue: 'pr-ds1-smartSortDelete-q'
+  smartSortDeleteKey: 'delete'
+
+web-event:
+  smartCategorizationResultExchange: 'pr-ds1-smartsort-result-exchange'
+
+javelin:
+  jwt:
+    cloudkey: test
+message:
+  deadLetterExchange: "dead-letter-exchange"
+  smartInteractionExchange: 'pr-ds1-smartsort-interaction-exchange'
+  smartInteractionUpdateCategoryRoutingKey: 'pr-ds1-smartInteraction.updateCategory'
+
+---
+spring:
+  profiles: local
+  rabbitmq:
+    virtualHost: /
+    managementUri: http://guest:guest@localhost:15672/api/
+    addresses: amqp://guest:guest@127.0.0.1:5672//
+
+
+# Spring autowire debugging:
+debug: true

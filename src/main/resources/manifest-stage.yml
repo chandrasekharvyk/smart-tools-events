@@ -1,0 +1,6 @@
+## Cloud Foundry deployment manifest
+---
+inherit: manifest-base.yml
+applications:
+- name: smart-tools-events
+  host: smart-tools-events-stage

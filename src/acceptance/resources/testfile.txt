@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><DocText xmlns="http://ns.adobe.com/DDX/DocText/1.0/">
+<ParagraphsPerPage>
+<Page pageNumber="1">
+<Paragraph>
+<Sentence>TELEFONICA TERRA NETWORKS AGREEMENT FOR DIVESTITURE OF A LINE OF BUSINESS This Agreement for Divestiture of a Line of Business is entered into by and between: (i) Telefonica Servicios Internet S.A.C., identified under no. 30753850 of the Unified Taxpayers Registry (Registro Unico de Contribuyentes - RUC); with corporate offices at Avenida Jorge Basadre 592, Office 504, Torre Azul, Piso 4, San Isidro, Lima, Peru, and represented herein by Jesus Equiza, under a specific power of attorney granted to this end, and identified with Alien Identification Card No. 97536; hereinafter referred to as "TSI." </Sentence>
+<Sentence>(ii) Terra Networks Peru S.A., identified under no. 43280716 of the Unified Taxpayers Registry (Registro Unico de Contribuyentes - RUC), with corporate offices at in the city of Lima, Peru; represented herein by Rainer Harry Spitzer Chang, in his capacity as General Manager, and identified with Voter Registration Card No. 07866791, who states that he has sufficient authority to enter into this agreement; hereinafter referred to as "TNP." </Sentence>
+<Sentence>This Agreement for Divestiture of a Line of Business is entered into according to the following terms and conditions: ONE. - BACKGROUND 1.1 TSI is a subsidiary of Telefonica del Peru S.A.A., founded as part of the latter's strategy for providing value added services. </Sentence>
+<Sentence>For the purposes of this agreement, the listed services shall hereinafter be referred to as the "INTERNET SERVICES." </Sentence>
+<Sentence>In conducting its commercial activities, TSI provides INTERNET SERVICES, not including what is known as a "Portal," to two clearly defined marketsegments: (i) the market consisting of corporate customers (including companies using INTERNET SERVICES), and (ii) the market including residential customers. </Sentence>
+<Sentence>TSI warrants that each line of business is conducted independently, as demonstrated in the customer breakdown, listing the customers that belong to each of these market segments. 1.2 Within the overall framework of the global strategies designed for the various companies making up the Grupo Societario Telefonica, S.A. </Sentence>
+<Sentence>(hereinafter, referred to as the "Telefonica Group"), including the parties hereto, it was decided that it was in the interest of those concerned to develop the residential user market on an integrated basis &lt;PAGE&gt; 2
+
+</Sentence>
+</Paragraph>
+</Page>
+<Page pageNumber="2">
+<Paragraph>
+<Sentence>worldwide. </Sentence>
+<Sentence>For this reason, a decision was made to run the services to be offered to this market through a specific worldwide corporate sub- group,owed by the Telefonica Group, and to this end, TERRA NETWORKS was founded. </Sentence>
+<Sentence>TERRA NETWORKS is responsible for developing market activities in the various countries where the Telefonica Group operates, either directly or through its affiliates or subsidiaries, for INTERNET SERVICES aimed at residential users and small business markets, known as "small offices/home offices" (hereinafter, "SOHOs"). </Sentence>
+<Sentence>The parties understand that the growth strategy for these markets, as defined, will allow for economies of scale in the provision of INTERNET SERVICES. 1.3 TNP is an affiliate of TERRA NETWORKS devoted to providing interactive services over the Internet aimed at the residential user market (hereinafter, the "TNP Business"). </Sentence>
+<Sentence>TNP does not offer its value added activities in the corporate customer market segment. 1.4 For the purposes of this agreement, it shall be understood that the residential user market consists of (i) individuals who at the time of contracting for the INTERNET SERVICES, and for as long as they remain users of such services, have no intention of using the services, nor do they currently use them to carry out commercial activities relating to providing goods or services of any type; and (ii) individuals, telecommuters and self-employed professionals who have the intention to use the INTERNET SERVICES from their homes for carrying out commercial activities related to providing goods or services. </Sentence>
+<Sentence>TWO. - REPRESENTATIONS AND WARRANTIES 2.1 In its execution of the overall strategy set by the companies making up the Telefonica Group, TSI agrees to restrict its activities to providing INTERNET SERVICES for corporate customers (for the purposes herein, corporate customers shall include any individual or legal entity not included in the definition given under paragraph 1.4). </Sentence>
+<Sentence>To this end, and in accordance with the business strategy designed by TSI, it shall cease developing or offering the INTERNET SERVICES to residential customers, hereinafter the "Business." 2.2 In view of the shared interests of TSI and TNP, hereinafter, the "Parties," they are entering into this Agreement for Divestiture of a Line of Business under the terms and conditions set forth below. 2.3 TNP represents and warrants the following to TSI: 2.3.1 It is interested in expanding its customer portfolio, and relying on the use of the assets to set up the Business.
+
+</Sentence>
+</Paragraph>
+</Page>
+<Page pageNumber="3">
+<Paragraph>
+<Sentence>2.3.2 It is authorized to enter into this agreement under its Bylaws and under all applicable rules and regulations. </Sentence>
+<Sentence>&lt;PAGE&gt; 3 2.3.3 There are no legislative, court-ordered, statutory or contractual provisions, nor any unexecuted awards or provisions of any other type barring it from entering into or performing the agreement. 2.3.4 Authorization of this agreement or fulfillment of the obligations set forth herein: a. </Sentence>
+<Sentence>Is not in violation of any laws currently in force, any administrative regulations, judicial rulings, arbitration awards or any other legal provisions applicable to TNP. b. </Sentence>
+<Sentence>Does not imply a breach of any obligations undertaken by TNP. 2.3.5 It has the capacity to undertake all the obligations emerging as a result of the execution of this agreement. 2.4 TSI represents and warrants the following: 2.4.1 It is authorized to enter into this agreement under its Bylaws and under all applicable rules and regulations. 2.4.2 There are no legislative, court-ordered, statutory or contractual provisions, nor any unexecuted awards or provisions of any other type barring it from entering into or performing the agreement. 2.4.3 Authorization of this agreement or fulfillment of the obligations set forth herein: a. </Sentence>
+<Sentence>Is not in violation of any laws currently in force, any administrative regulations, judicial rulings, arbitration awards or any other legal or statutory provisions applicable to TSI. b. </Sentence>
+<Sentence>Does not imply a breach of any obligations undertaken by TSI. 2.4.4 It has the capacity to undertake all the obligations emerging as a result of the execution of this agreement. 2.4.5 It owns the assets that will be placed at the disposal of TNP for its use emerging from the execution of the related contracts, so that TNP may begin to conduct its activities. </Sentence>
+<Sentence>Furthermore, there
+
+</Sentence>
+</Paragraph>
+</Page>
+<Page pageNumber="4">
+<Paragraph>
+<Sentence>are no liens, encumbrances or any judicial or non-judicial measures attached to these assets. 2.4.6 It has title to the contractual relationships mentioned in Exhibit 2 of the agreement. 2.4.7 All the fixed assets it will make available for TNP's use are located at its facilities. 2.4.8 All the fixed assets it will make available for TNP's use are in good working condition, and have been properly kept and maintained, and they were &lt;PAGE&gt; 4 manufactured according the standards of quality applicable to the normal conduct of the Business. 2.4.9 All the fixed assets it will make available for TNP's use have been subjected to all actions needed to make them Y2K compliant. 2.4.10 It has title to all licenses, authorizations, registrations and permits needed to conduct the Business. 2.4.11 It has received no notice of any expropriation of any of its assets, and it has no knowledge of any pending expropriation proceedings. 2.4.12 In general, it has been running the Business in accordance with the laws prevailing in Peru, including any regulations applicable to environmental protection. 2.4.13 It agrees not to conduct the Business, either directly or in collaboration with any third parties. </Sentence>
+<Sentence>In particular, it shall abstain from providing the Internet Services, any content, publicity or electronic commerce over the Internet aimed at residential users, in any shape or form. 2.4.14 None of the statements or representations made in this agreement contain any information that is false or misleading, or that omits mention of any material aspect, or that could lead to an inaccurate impression about the Business. </Sentence>
+<Sentence>Without restricting the general nature of the above statements, TSI has no knowledge of any event that could materially affect the cost of operating the Business. </Sentence>
+<Sentence>THREE. - PURPOSE OF THE AGREEMENT 3.1 By entering into this Agreement, TSI undertakes to make available to TNP
+
+</Sentence>
+</Paragraph>
+</Page>
+<Page pageNumber="5">
+<Paragraph>
+<Sentence>so that TNP may start carrying on its business activity, the Business Unit consisting of the technological service platform required on signing the relevant trade agreements. </Sentence>
+<Sentence>TSI shall also transfer 1) all the contractual relationships it has with its customers as of the date this Agreement is signed, and 2) the customer databases from the Information Supplier Centers (CPIs or ISPs) with which it has entered into agreements for assigning its contractual position, which are listed in Exhibit 1. </Sentence>
+<Sentence>The telecommunications infrastructures needed for the Business Unit shall not be included in the definition of the Business Unit, and shall in each case be the object of a lease in the appropriate trade agreements entered into with Telefonica del Peru, S.A.A. 3.2 The Parties agree that the assets of TSI used for or emerging as a resultof the Business that make up the technological service platform and that are needed for TNP to be able to carry on its activities, including, but not limited to, the platform required for the Housing and Hosting services, shall be made available to TNP for the purposes hereof, on signing the appropriate agreements, so that TNP may carry on the Business in the future under the same conditions as had been the case for TSI. </Sentence>
+<Sentence>During the first six (6) months of the term &lt;PAGE&gt; 5 of this Agreement, TSI shall provide TNP with the housing and hosting services over the technological service platform, it being understood that the remuneration for these services during that six (6) month period has been included in the consideration set in Clause Four hereof. </Sentence>
+<Sentence>The telecommunications infrastructures needed to conduct the TNP Business fall outside the scope of this paragraph and shall in each case be the objectof a lease through the appropriate trade agreements entered into with Telefonica del Peru, S.A.A. 3.3 The parties agree that the term "contractual relationships," mentioned in Clause 3.1 above, covers the portfolio of residential users. 3.4 The sales actions aimed at formalizing the contractual relationships between TNP and each of TSI's current customers, as well as with the customers referred to in Clause 3.1 (2) above shall be TNP's responsibility. 3.5 The parties shall by mutual agreement draw up the procedures to be followed for determining the number of residential users who are to be
+
+</Sentence>
+</Paragraph>
+</Page>
+<Page pageNumber="6">
+<Paragraph>
+<Sentence>served by TNP as of November 15, 1999. </Sentence>
+<Sentence>In the event that as a result of applying these procedures, the above number of residential users falls below 60,000 (sixty thousand) customers, the parties agree that TSI must compensate TNP by providing the services requested by TNP, which TSI shall provide, without TNP having to pay any amount for said services until the amount of the compensation has been attained. </Sentence>
+<Sentence>To this end, the amount of the compensation shall be the result of multiplying the difference between 60,000 and the potentially smaller number of users as of November 15, 1999, by US$500 (five hundred 00/100 United States dollars), up to a limit of US$5,000,000 (five million 00/100United States dollars). </Sentence>
+<Sentence>The amount of the compensation so determined shall be offset against the remuneration that would have to be paid for the services TSI provides TNP under the terms of this Clause 3.5, paragraph two, bearing in mind the rates in force for each of the services at the time any such services are provided. </Sentence>
+<Sentence>FOUR. - PRICE 4.1 The parties agree that the price for conveying the Business Unit shall be US$5,000,000.00 (five million United States dollars). </Sentence>
+<Sentence>This does not include the General Sales Tax (Impuesto General a las Ventas - IGV) or the Municipal Promotion Tax (Impuesto de Promocion Municipal - IPM). </Sentence>
+<Sentence>Both taxes shall be added to the price that must be paid by TNP. 4.2 The Parties likewise expressly provide that when determining the price they have assessed the situation of the accounts receivable that are an integral part of Exhibit 1. </Sentence>
+<Sentence>In &lt;PAGE&gt; 6 this regard, TNP fully assumes the commercial risk relating to the portfolio of residential users referred to in Clause 3.3, above. 4.3 TNP shall pay TSI the price in cash, in dollars, the currency of the United States of America, under the applicable terms of Article 1237 of the Civil Code. </Sentence>
+<Sentence>FIVE. - FORMALIZING THE TRANSFER 5.1 The parties agree that TSI shall cooperate and collaborate at all times,and make every effort to effectively and fully formalize the
+
+</Sentence>
+</Paragraph>
+</Page>
+<Page pageNumber="7">
+<Paragraph>
+<Sentence>aforementioned contractual relationships. </Sentence>
+<Sentence>When completing such work, TSI undertakes not to deviate from the marketing strategies and sales policies that are set at any time by TNP, as well as to follow its directives for carrying on said marketing activities on TNP's behalf. 5.2 The parties agree that TNP, as a result of the transfer governed by this Agreement, shall take over all the rights, obligations, responsibilities, profits and losses arising from or relating to the aforementioned customers. </Sentence>
+<Sentence>SIX. - TRANSFER OF STAFF 6.1 As a result of the provisions of the above Clauses, the parties agree to make every effort to ensure that TSI staff attached to the Business are transferred and become part of TNP's work force as from the effective date of the transfer. 6.2 For the purposes described in Clause 6.1, above, the parties shall determine, by mutual agreement, the personnel involved in the activities of the Business, and TNP shall make every effort to ensure that the respective workers of TSI voluntarily agree to be transferred to TNP's work force. </Sentence>
+<Sentence>If for any reason any TSI worker attached to the Business were to fail to agree to be transferred to TNP's work force and this were to force TSI to unilaterally terminate the employment agreement with said worker, the cost of any severance that would have to be paid said workerwould be met by TNP. </Sentence>
+<Sentence>In any case, TSI shall make every effort to reduce any labor-related contingencies that might arise and damage TNP's interests stemming from the aforementioned staff transfers. </Sentence>
+<Sentence>The Parties declare that responsibility for paying remuneration, wages, commissions, bonuses, social and similar benefits that have accrued up to the effective date of the transfer for the personnel who are transferred with the Business, shall be paid by TSI. </Sentence>
+<Sentence>In the event that, under applicable law, TNP were to be required to make any of these payments, TSI shall immediately refund the relevant amount to TNP. </Sentence>
+<Sentence>&lt;PAGE&gt; 7 SEVEN. - SURVIVAL AND RELIABILITY OF THE REPRESENTATIONS AND WARRANTIES 7.1 TSI shall be held liable with regard to TNP and shall indemnify and hold TNP harmless from any loss, liability, cost, fine or expense of any kind directly or indirectly emerging from:
+
+</Sentence>
+</Paragraph>
+</Page>
+<Page pageNumber="8">
+<Paragraph>
+<Sentence>7.1.1 Any failure to fulfill any representation, warranty or undertaking made by TSI as set forth herein; and 7.1.2 Any breach or nonperformance of any agreement, undertaking or obligation made by TSI as set forth herein. 7.2 TNP shall be held liable with regard to TSI and shall defend, indemnify and hold TSI harmless from any loss, liability, cost, fine or expense of any kind directly or indirectly arising from: 7.2.1 Any failure to fulfill any representation, warranty or undertaking made by TNP as set forth or envisioned herein; and 7.2.2 Any breach or nonperformance of any agreement, undertaking or obligation made by TNP as set forth herein. 7.3 The amount of the indemnity for any claim shall become payable when calledfor and shall be determined after recovering any insurance, real tax savings and recoveries from third parties. </Sentence>
+<Sentence>EIGHT. - HEADINGS The headings used in each Clause are for reference purposes only and shall not be construed to have any effect on the content or scope of this Agreement. </Sentence>
+<Sentence>NINE. - WAIVERS Any failure to exercise a right shall not entail a waiver thereof. </Sentence>
+<Sentence>TEN. - APPLICABLE LAW This Agreement shall be construed and governed in accordance with the current law of the Republic of Peru. </Sentence>
+<Sentence>ELEVEN. - PARTIAL INVALIDITY In the event that any stipulation or agreement herein is deemed to be invalid or unenforceable by any arbitration award rendered under the terms of the Agreement, or by any competent court, said &lt;PAGE&gt; 8 decision shall not affect the validity of any other provision of this Agreement, provided that they can be separated. </Sentence>
+<Sentence>TWELVE. - EXPENSES Each Party shall pay the expenses it has incurred for preparing, formalizing and carrying out this Agreement, including the respective notary's expenses.
+
+</Sentence>
+</Paragraph>
+</Page>
+<Page pageNumber="9">
+<Paragraph>
+<Sentence>THIRTEEN. - ADDRESS FOR NOTICES Any notices sent to either of the Parties shall be deemed to have been validly received by the other party if (i) it is delivered in person or sent by a messenger or similar service; or (ii) it is sent by fax with acknowledgement of receipt, on the date of delivery, to the addresses given below: To TSI: Av. </Sentence>
+<Sentence>Arequipa 1155, piso 5 Santa Beatriz Lima, Peru Attn.: General Manager To TNP: Av.______________________ _________________________ Lima, Peru Attn.____________________ These addresses may be changed to new addresses in the city of Lima, giving 15 days' prior written notice to the other party. </Sentence>
+<Sentence>FOURTEEN. - ARBITRATION AGREEMENT Any disputes or disagreement between the Parties arising from the interpretation or performance of this Agreement shall be submitted to an Arbitration Panel made up of three members, whose decision shall be binding. </Sentence>
+<Sentence>Each party shall appoint one arbitrator, and the third arbitrator shall be appointed by the two arbitrators so appointed. </Sentence>
+<Sentence>In the event that no agreement is reached on the appointment of the third arbitrator, or if either of the parties fails to appoint its arbitrator within the ten days after being called on to do so by the other party, the appropriate appointment shall be made by the Lima Chamber of Commerce. </Sentence>
+<Sentence>The arbitration shall be by right and shall be governed by the rules of procedure laid down by the Arbitration Center of the Lima Chamber of Commerce. </Sentence>
+<Sentence>FIFTEEN. - GENERAL PROVISIONS This Agreement may be modified, regulated or terminated only upon the express, written agreement of the Parties. </Sentence>
+<Sentence>&lt;PAGE&gt; 9 FIFTEEN. - GENERAL PROVISIONS This Agreement may be modified, regulated or terminated only upon the express, written agreement of the Parties.
+
+</Sentence>
+</Paragraph>
+</Page>
+<Page pageNumber="10">
+<Paragraph>
+<Sentence>SIXTEEN. - COPIES Set out on two identical copies, one for TSI and the other for TNP, in Lima on October 20, 1999.
+
+</Sentence>
+</Paragraph>
+<Paragraph>
+<Sentence> [Illegible signature] [Illegible signature] TELEFONICA SERVICIOS INTERNET, S.A.C. </Sentence>
+<Sentence>TERRA NETWORKS PERU, S.A.C. </Sentence>
+<Sentence>&lt;PAGE&gt; 10 [illegible logo] TERRA NETWORKS ATTACHMENT 1 TO THE AGREEMENT FOR CONVEYANCE OF LINE OF BUSINESS Internet Service Provider Centers (ISP's) with which TSI has signed Agreements for the Assignment of Contractual Position as of October 20, 1999
+
+</Sentence>
+</Paragraph>
+<Paragraph>
+<Sentence> [initials]
+
+</Sentence>
+</Paragraph>
+<Paragraph>
+<Sentence> - - - - -
+
+</Sentence>
+</Paragraph>
+<Paragraph>
+<Sentence> BLOCKBUSTER LA RED COSAPI ITETE AMERINET
+
+</Sentence>
+</Paragraph>
+</Page>
+</ParagraphsPerPage>
+</DocText>
