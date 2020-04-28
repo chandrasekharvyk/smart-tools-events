@@ -1,0 +1,25 @@
+# Build files
+*.class
+**/target/
+/target
+*/target/*
+build/
+*.log
+.gradle/
+.DS_Store
+classes/
+out/
+# IDE files
+.classpath
+.project
+.groovy/
+.settings
+.settings/
+*.iml
+.idea/
+/bin/
+*.log
+/.apt_generated/
+/deps.txt
+application-local.yml
+
